@@ -7,8 +7,8 @@ public class mainClass {
         Scanner input = new Scanner(System.in);
 
         //Variaveis usadas no loop
-        char continuar = 'z';
-        char associacao = 'z';
+        char continuar = 'y';
+        char associacao = 'c';
         int numDeResistores = 0;
         double valorDaResistencia = 0;
         double resistenciaEquivalente = 0;
@@ -57,7 +57,7 @@ public class mainClass {
                                 System.out.println("O valor da resistência não pode ser negativo ou zero. O resistor será desconsiderado.");
                                 continue;
                             }
-                            
+
                         resistenciaEquivalente += operacoes.equivalenciaParalela(valorDaResistencia);
                     }
                     resistenciaEquivalente = 1/resistenciaEquivalente;
