@@ -32,15 +32,32 @@ public class mainClass {
 
                 //Lógica de cálculo.
                 if(associacao == 'a'){
+
                     for(int i = 1; i <= numDeResistores; i++){
-                        System.out.println("\n Insira o valor da resistência do " + i + "º resistor.");
+                        System.out.println("\nInsira o valor da resistência do " + i + "º resistor.");
                         valorDaResistencia = input.nextDouble();
+
+                            //Impedindo que valor da resistência seja inválido.
+                            if(valorDaResistencia <= 0){
+                                System.out.println("O valor da resistência não pode ser negativo ou zero. O resistor será desconsiderado.");
+                                continue;
+                            }
+
                         resistenciaEquivalente += operacoes.equivalenciaSequencia(valorDaResistencia);
                     }
                 } else{
+
                     for(int i = 1; i <= numDeResistores; i++){
-                        System.out.println("Insira o valor da resistência do " + i + "º resistor.");
+
+                        System.out.println("\nInsira o valor da resistência do " + i + "º resistor.");
                         valorDaResistencia = input.nextDouble();
+
+                            //Impedindo que valor da resistência seja inválido.
+                            if(valorDaResistencia <= 0){
+                                System.out.println("O valor da resistência não pode ser negativo ou zero. O resistor será desconsiderado.");
+                                continue;
+                            }
+                            
                         resistenciaEquivalente += operacoes.equivalenciaParalela(valorDaResistencia);
                     }
                     resistenciaEquivalente = 1/resistenciaEquivalente;
